@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        h3 {
+            margin-top: 10%;
+            font-size: 30pt;
+        }
+    </style>
+    {% if wanted_user.posts.all %}
+        {% for post in wanted_user.posts.all %}
+            <div class="post">
+                <div class="date">
+                    <p>Criado em: {{ post.created_date }}</p>
+                </div>
+                <h2><a href="{{ post.get_detail_url }}">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Sem posts para mostar</h3>
+    {% endif %}
+{% endblock %}  
