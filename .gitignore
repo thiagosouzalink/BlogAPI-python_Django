@@ -12,6 +12,8 @@ db.sqlite3
 
 configuracao_deploy_heroku.txt
 
+info_heroku.txt
+
 vblogapi/
 
 staticfiles/
